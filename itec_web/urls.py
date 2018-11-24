@@ -17,7 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 
+from itec_web import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('allauth.urls')),
+    path('', views.Home.as_view(), name='home'),
 ]
